@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c4ed032b3cdd412fa01d97ad2ebd5d9, type: 3}
+  m_Name: GestureConfig
+  m_EditorClassIdentifier: 
+  preferBuiltInCamera: 1
+  preferredDeviceNameContains: 
+  builtInDeviceNameContains:
+  - FaceTime
+  - Integrated
+  - Built-in
+  - "\u5185\u8535"
+  leftZoneBoundary: 0.4
+  rightZoneBoundary: 0.6
+  moveCooldownSeconds: 0.3
+  pinchThreshold: 0.284
+  confirmCooldownSeconds: 0.5
+  minHandPresenceConfidence: 0.5
+  minHandDetectionConfidence: 0.5
+  minTrackingConfidence: 0.5
+  mirrorHorizontal: 1
