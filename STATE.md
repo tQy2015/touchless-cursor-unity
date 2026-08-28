@@ -28,9 +28,14 @@ MVP実装を、公開テンプレートとして切り出したもの。MediaPip
       同じ場所へ展開される想定、`packages-lock.json`の`source: embedded`参照は
       相対パスなので機種依存なし)。`Library/`・`Logs/`・`UserSettings/`もコピー不要
       (Unity初回オープン時に再生成)
-- [ ] コピーしたシーン(`ArcadeGestureDemo.unity`等)がhomulerプラグイン未導入状態で
-      Missing Prefab等のエラーを出さないか確認(Bootstrap.prefab参照が外部依存のため)。
-      → homulerインポート後に実際にUnityで開いて動作確認する必要あり
+- [x] コピーしたシーン(`ArcadeGestureDemo.unity`等)の動作確認(2026-08-28)。
+      `mediapipe-hands-unity`側の`Packages/com.github.homuler.mediapipe`を検証用に一時コピーし
+      (commitはしない・`.gitignore`で除外)、Unity 2022.3.62f3のbatchmodeで
+      (1) プロジェクト初回インポートがコンパイルエラー0件で完了、
+      (2) 全6シーン(ArcadeGestureDemo + Scene-1〜5)をEditorSceneManagerで開いて
+      Missing Prefab/Missing Scriptが無いことを確認(`missingCount=0`)。
+      検証用スクリプトは`Assets/HandsGesture/Editor/SceneIntegrityCheck.cs`として
+      恒久的に残置(今後のリグレッション確認に再利用可能)
 - [ ] `Assets/HandsGesture/GestureConfig.asset` に含まれる調整値(内蔵/外付けカメラ判定名等)が
       個人環境依存でないか確認(`preferredDeviceNameContains`等)
 - [ ] リポジトリ名を反映してnamespace/フォルダ名を `HandsGesture` → `TouchlessCursor` に
