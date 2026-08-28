@@ -4,6 +4,8 @@ Unity向け非接触(タッチレス)カーソル操作テンプレート。カ�
 アーケード風の「左右移動+決定」UIを操作する。検出エンジンはMediaPipe Hand Landmarkerを
 初期実装として使用するが、将来的に他の検出エンジンへの差し替え・追加も想定した名前・構成にしている。
 
+![ArcadeGestureDemo screenshot](docs/images/arcade_gesture_demo.png)
+
 ## セットアップ
 
 このリポジトリには検出エンジン(MediaPipe/homulerプラグイン)本体を同梱していない
