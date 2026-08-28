@@ -20,13 +20,22 @@ MVP実装を、公開テンプレートとして切り出したもの。MediaPip
 - [x] README(セットアップ手順)作成
 - [x] THIRD_PARTY_NOTICES.md 作成(Apache 2.0 + MIT表記、Bootstrap.cs改変箇所の明記)
 - [x] LICENSE本文確定(MIT、2026-08-28)
+- [x] `mediapipe-hands-unity`からフルUnityプロジェクト化(2026-08-28)。
+      `ProjectSettings/`・`Packages/manifest.json`・`Packages/packages-lock.json`・
+      `Assets/MediaPipeUnity/`(homulerサンプル資産・MIT・3.6MB)をコピー。
+      `Packages/com.github.homuler.mediapipe`(ネイティブライブラリ本体・392MB)は
+      意図的に**含めない**(利用者が`.unitypackage`をインポートすると自動的に
+      同じ場所へ展開される想定、`packages-lock.json`の`source: embedded`参照は
+      相対パスなので機種依存なし)。`Library/`・`Logs/`・`UserSettings/`もコピー不要
+      (Unity初回オープン時に再生成)
 - [ ] コピーしたシーン(`ArcadeGestureDemo.unity`等)がhomulerプラグイン未導入状態で
-      Missing Prefab等のエラーを出さないか確認(Bootstrap.prefab参照が外部依存のため)
+      Missing Prefab等のエラーを出さないか確認(Bootstrap.prefab参照が外部依存のため)。
+      → homulerインポート後に実際にUnityで開いて動作確認する必要あり
 - [ ] `Assets/HandsGesture/GestureConfig.asset` に含まれる調整値(内蔵/外付けカメラ判定名等)が
       個人環境依存でないか確認(`preferredDeviceNameContains`等)
 - [ ] リポジトリ名を反映してnamespace/フォルダ名を `HandsGesture` → `TouchlessCursor` に
       リネームするか検討(現状は移植コストを避けて`HandsGesture`のまま)
-- [ ] コミット・push
+- [x] コミット・push(2026-08-28)
 
 ## 元repoとの関係
 
